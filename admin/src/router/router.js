@@ -10,6 +10,7 @@ const routes = [
         component: Main,
         children: [
             { path: '/cate/create', component: CateEdit },
+            { path: '/cate/edit/:id', component: CateEdit, props: true },
             { path: '/cate/list', component: CateList },
         ],
     },
