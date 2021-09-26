@@ -7,4 +7,5 @@ import http from './http'
 
 const app = createApp(App).use(router).use(ElementPlus)
 app.config.globalProperties.$http = http
+app.config.devtools = true
 app.mount('#app')

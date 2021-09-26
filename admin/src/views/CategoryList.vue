@@ -3,15 +3,17 @@
     <h1>分类列表</h1>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="230"></el-table-column>
+      <el-table-column prop="parent.name" label="上级分类"></el-table-column>
       <el-table-column prop="name" label="分类名称"></el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
         <template #default="scope">
           <el-button
-            @click="$router.push(`/cate/edit/${scope.row._id}`)"
+            @click="$router.push(`/rest/categories/edit/${scope.row._id}`)"
             size="small"
-            >跳转</el-button
+            type="text"
+            >编辑</el-button
           >
-          <el-button @click="deleteCate(scope.row)" size="small"
+          <el-button type="text" @click="deleteCate(scope.row)" size="small"
             >删除</el-button
           >
         </template>
@@ -30,7 +32,7 @@ export default {
   },
   methods: {
     async fetch() {
-      const res = await this.$http.get("cate");
+      const res = await this.$http.get("rest/categories");
       this.items = res.data;
     },
     async deleteCate(row) {
@@ -40,7 +42,7 @@ export default {
         cancelButtonText: "不删",
       })
         .then(async () => {
-          const res = await this.$http.delete(`cate/${row._id}`);
+          const res = await this.$http.delete(`rest/categories/${row._id}`);
           console.log(res);
           if (res.data) {
             this.$message({

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Main from '../views/Main.vue';
-import CateEdit from '../views/CateEdit.vue';
-import CateList from '../views/CateList.vue';
+import CategoryEdit from '../views/CategoryEdit.vue';
+import CategoryList from '../views/CategoryList.vue';
 
 const routes = [
     {
@@ -9,9 +9,9 @@ const routes = [
         name: 'main',
         component: Main,
         children: [
-            { path: '/cate/create', component: CateEdit },
-            { path: '/cate/edit/:id', component: CateEdit, props: true },
-            { path: '/cate/list', component: CateList },
+            { path: '/categories/create', component: CategoryEdit },
+            { path: '/categories/edit/:id', component: CategoryEdit, props: true },
+            { path: '/categories/list', component: CategoryList },
         ],
     },
 ];

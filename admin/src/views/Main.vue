@@ -7,8 +7,8 @@
         <template #title><i class="el-icon-message"></i>内容管理</template>
         <el-menu-item-group>
           <template #title>分类</template>
-          <el-menu-item index="/cate/create">新建分类</el-menu-item>
-          <el-menu-item index="/cate/list">分类列表</el-menu-item>
+          <el-menu-item index="/categories/create">新建分类</el-menu-item>
+          <el-menu-item index="/categories/list">分类列表</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
     </el-menu>
